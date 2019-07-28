@@ -1,4 +1,4 @@
-package com.example.learn_springboot.contorller;
+package com.example.learn_springboot.controller;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
