@@ -15,14 +15,16 @@
         $(function () {
             $("button").click(function () {
                 $.ajax({
-                    type: "POST", contentType: "application/json",
-                    url: "http://localhost:8080/api/v1.0/tasks",
-                    data: JSON.stringify({
+                    type: "POST",
+                    url: "http://localhost:8080/api/ajaxReturnParamMap",
+                    // url: "http://localhost:8080/api/v1.0/tasks",
+                    data: {
                         title: "Donald Duck", description: "Duckburg"
-                    }),
-                    dataType: "json",
+                    },
                     success: function (data, status) {
-                        alert("Data: " + data + "\nStatus: " + status);
+                        $.each(data, function (key, val) {
+                            alert(key + ' : ' + val);
+                        });
                     }
                 });
             });
