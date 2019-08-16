@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class OpenweatherService {
-    public Object addressMap(Map param) {
+public class DataorkrService {
+    public Object epostMap(Map param) {
         RestTemplate restTemplate = new RestTemplate();
         Map params = new HashMap<String, String>();
         Map receiveObject = new HashMap<String, String>();

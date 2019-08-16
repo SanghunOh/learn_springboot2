@@ -6,7 +6,7 @@ package com.example.learn_springboot.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.learn_springboot.service.OpenweatherService;
+import com.example.learn_springboot.service.DataorkrService;
 import com.example.learn_springboot.service.ShareDataService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +28,6 @@ public class RestWSController {
 	@Autowired
 	private ShareDataService shareDataService;
 
-	@Autowired
-	private OpenweatherService openweatherService;
-
 	// Restful
 	@CrossOrigin // allow to access others site
 	@RequestMapping(value = "/ws/{action}", method = { RequestMethod.GET, RequestMethod.POST })
@@ -50,6 +47,9 @@ public class RestWSController {
 
 		return resultObject;
 	}
+
+	@Autowired
+	private DataorkrService dataorkrService;
 
 	@CrossOrigin // allow to access others site
 	@RequestMapping(value = "/remote/{action}", method = { RequestMethod.GET, RequestMethod.POST })
@@ -76,7 +76,7 @@ public class RestWSController {
 			receiveObject = restTemplate.getForObject(targetUri, Object.class);
 			resultObject = ((Map) receiveObject).get("list");
 		} else if ("addressMap".equalsIgnoreCase(action)) { // 도로명주소 우편번호 조회서비스
-			resultObject = openweatherService.addressMap(paramMap);
+			resultObject = dataorkrService.epostMap(paramMap);
 		}
 
 		return resultObject;
