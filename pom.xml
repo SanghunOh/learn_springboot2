@@ -37,11 +37,10 @@
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
       <scope>compile</scope>
     </dependency>
-<<<<<<< HEAD
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
-=======
+    </dependency>
     
     <dependency>
       <groupId>nz.net.ultraq.thymeleaf</groupId>
@@ -62,7 +61,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
->>>>>>> 04.thymeleaf
       <scope>compile</scope>
     </dependency>
   </dependencies>
